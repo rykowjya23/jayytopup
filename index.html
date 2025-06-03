@@ -2,80 +2,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jayytopup - Top Up Game</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Jayytopup - Order Top Up Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
     body {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(to right, #141e30, #243b55);
       color: #fff;
     }
     header {
-      background-color: #1c2b36;
-      padding: 30px;
+      background-color: #1a1f2b;
+      padding: 40px 20px;
       text-align: center;
-      border-bottom: 4px solid #00c3ff;
+      border-bottom: 4px solid #4fd1c5;
     }
     header h1 {
-      color: #00c3ff;
-      font-size: 2.2rem;
+      color: #4fd1c5;
+      font-size: 2.5rem;
     }
     main {
-      max-width: 500px;
-      margin: 40px auto;
-      background: #243b55;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 24px rgba(0, 195, 255, 0.2);
+      max-width: 550px;
+      margin: 50px auto;
+      background: #1e293b;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
     h2 {
       text-align: center;
-      margin-bottom: 20px;
-      color: #00c3ff;
+      margin-bottom: 30px;
+      color: #4fd1c5;
+      font-size: 1.8rem;
     }
     label {
       display: block;
       margin-top: 20px;
       font-weight: 600;
+      color: #e2e8f0;
     }
     input, select {
       width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      background: #1e2d3d;
-      border: 2px solid #00c3ff;
-      border-radius: 8px;
-      color: #fff;
+      padding: 14px;
+      margin-top: 8px;
+      background: #0f172a;
+      border: 2px solid #4fd1c5;
+      border-radius: 10px;
+      color: #e2e8f0;
+      font-size: 1rem;
     }
     input::placeholder {
-      color: #ccc;
+      color: #94a3b8;
     }
     button {
       width: 100%;
-      padding: 14px;
-      margin-top: 30px;
-      background-color: #00c3ff;
-      color: #0f1e2e;
+      padding: 16px;
+      margin-top: 40px;
+      background-color: #4fd1c5;
+      color: #0f172a;
       font-size: 1.1rem;
-      font-weight: bold;
+      font-weight: 600;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
       transition: background 0.3s;
     }
     button:hover {
-      background-color: #00a4cc;
+      background-color: #38b2ac;
     }
     footer {
       text-align: center;
-      padding: 20px;
-      color: #ccc;
-      font-size: 0.9rem;
+      padding: 30px;
+      color: #cbd5e1;
+      font-size: 0.95rem;
     }
   </style>
 </head>
@@ -83,7 +86,7 @@
   <header>
     <h1>Jayytopup</h1>
   </header>  <main>
-    <h2>Formulir Top Up Game</h2>
+    <h2>Order Top Up Game</h2>
     <form id="orderForm">
       <label for="userId">ID Game</label>
       <input type="text" id="userId" name="userId" placeholder="Contoh: 123456789" required /><label for="server">Server (opsional)</label>
