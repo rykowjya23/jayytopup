@@ -14,8 +14,8 @@
       text-align: center;
     }
     #gameLogo {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       object-fit: contain;
       margin-bottom: 1rem;
       transition: opacity 0.3s ease;
@@ -35,6 +35,11 @@
       border-radius: 5px;
       font-size: 1.2rem;
       margin-bottom: 2rem;
+      cursor: pointer;
+    }
+    #orderBtn:disabled {
+      background: grey;
+      cursor: not-allowed;
     }
     #paymentMethods {
       max-width: 400px;
@@ -60,41 +65,52 @@
       flex-wrap: wrap;
     }
     .payment-list li {
-      flex: 1 1 100px;
+      flex: 1 1 80px;
       text-align: center;
       font-weight: 600;
       color: #333;
     }
     .payment-list img {
-      width: 50px;
-      height: 50px;
+      width: 32px;
+      height: 32px;
       object-fit: contain;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
+      filter: grayscale(0.3);
+      transition: filter 0.3s ease;
+    }
+    .payment-list img:hover {
+      filter: grayscale(0);
     }
   </style>
 </head>
 <body>
   <h1 id="headerTitle">jayytopup</h1>
-  <p id="headerSubtitle">Pilih game yang ingin kamu top up:</p>
+  <p id="headerSubtitle">Masukkan ID Player dan pilih game yang ingin kamu top up:</p>
+
+  <input
+    type="text"
+    id="playerId"
+    name="playerId"
+    placeholder="Contoh: 123456789"
+    required
+    style="font-size: 1.1rem; padding: 0.5rem; width: 220px; margin-bottom: 1rem;"
+  />
+  <br />
 
   <img
     id="gameLogo"
-    src="https://cdn-icons-png.flaticon.com/128/5968/5968316.png"
-    alt="Logo Game"
+    src="https://cdn-icons-png.flaticon.com/512/616/616408.png"
+    alt="Diamond Logo"
   />
   <br />
 
   <select id="gameSelect" name="gameSelect">
-    <option value="MLBB" id="optionMLBB">Mobile Legends</option>
-    <option value="Free Fire" id="optionFF">Free Fire</option>
-    <option value="PUBG" id="optionPUBG">PUBG</option>
+    <option value="MLBB">Mobile Legends</option>
+    <option value="Free Fire">Free Fire</option>
+    <option value="PUBG">PUBG</option>
   </select>
   <br />
-  <a
-    id="orderBtn"
-    href="https://wa.me/6283117309346?text=Halo%20saya%20ingin%20top%20up%20Mobile%20Legends"
-    target="_blank"
-  >Order Sekarang</a>
+  <a id="orderBtn" href="#" target="_blank" aria-disabled="true">Order Sekarang</a>
 
   <div id="paymentMethods">
     <h3>Metode Pembayaran</h3>
@@ -104,50 +120,69 @@
         Gopay
       </li>
       <li>
-        <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Dana" />
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Dana" />
         Dana
       </li>
       <li>
-        <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" alt="OVO" />
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968672.png" alt="OVO" />
         OVO
       </li>
       <li>
-        <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Bank Transfer" />
+        <img src="https://cdn-icons-png.flaticon.com/512/126/126510.png" alt="Bank Transfer" />
         Bank Transfer
       </li>
       <li>
-        <img src="https://cdn-icons-png.flaticon.com/512/2621/2621297.png" alt="Bayar di Tempat" />
+        <img src="https://cdn-icons-png.flaticon.com/512/1239/1239525.png" alt="Bayar di Tempat" />
         Bayar di Tempat
       </li>
     </ul>
   </div>
 
   <script>
+    const playerIdInput = document.getElementById('playerId');
     const select = document.getElementById('gameSelect');
     const orderBtn = document.getElementById('orderBtn');
-    const gameLogo = document.getElementById('gameLogo');
+
+    const diamondLogo = 'https://cdn-icons-png.flaticon.com/512/616/616408.png';
 
     const logos = {
-      MLBB: 'https://cdn-icons-png.flaticon.com/128/5968/5968316.png',
-      'Free Fire': 'https://cdn-icons-png.flaticon.com/128/5968/5968324.png',
-      PUBG: 'https://cdn-icons-png.flaticon.com/128/5968/5968319.png',
+      MLBB: diamondLogo,
+      'Free Fire': diamondLogo,
+      PUBG: diamondLogo,
     };
+
+    function updateOrderLink() {
+      const game = select.value;
+      const id = playerIdInput.value.trim();
+      let gameText = game;
+      if (game === 'MLBB') gameText = 'Mobile Legends';
+
+      if (id === '') {
+        orderBtn.href = '#';
+        orderBtn.style.pointerEvents = 'none';
+        orderBtn.style.backgroundColor = 'grey';
+        orderBtn.setAttribute('aria-disabled', 'true');
+      } else {
+        orderBtn.href = `https://wa.me/6283117309346?text=${encodeURIComponent(
+          `Halo saya ingin top up ${gameText} dengan ID Player ${id}`
+        )}`;
+        orderBtn.style.pointerEvents = 'auto';
+        orderBtn.style.backgroundColor = '#007bff';
+        orderBtn.removeAttribute('aria-disabled');
+      }
+    }
+
+    playerIdInput.addEventListener('input', updateOrderLink);
 
     select.addEventListener('change', () => {
       const game = select.value;
-      let gameText = game;
 
-      if (game === 'MLBB') gameText = 'Mobile Legends';
+      document.getElementById('gameLogo').src = logos[game];
 
-      orderBtn.href = `https://wa.me/6283117309346?text=Halo%20saya%20ingin%20top%20up%20${encodeURIComponent(gameText)}`;
-
-      gameLogo.style.opacity = 0;
-      setTimeout(() => {
-        gameLogo.src = logos[game];
-        gameLogo.alt = `${gameText} Logo`;
-        gameLogo.style.opacity = 1;
-      }, 300);
+      updateOrderLink();
     });
+
+    updateOrderLink();
   </script>
 </body>
 </html>
