@@ -1,190 +1,182 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>jayytopup - Top Up Game Murah & Cepat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jayytopup - Top Up Game Otomatis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    :root {
+      --primary: #0066ff;
+      --secondary: #00bfff;
+      --bg-light: #f0f8ff;
+      --text-dark: #222;
+      --white: #fff;
+    }* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
 
-    body {
-      background-color: #f9fbff;
-      color: #222;
-      line-height: 1.6;
-    }
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
 
-    header {
-      background: linear-gradient(90deg, #1d8cf8, #3358f4);
-      color: white;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
-    }
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+}
 
-    header h1 {
-      font-size: 2.2rem;
-      letter-spacing: 2px;
-      margin-bottom: 0.3rem;
-    }
+header h1 {
+  font-size: 2.5rem;
+}
 
-    header p {
-      font-size: 1rem;
-      opacity: 0.9;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  background: var(--primary);
+  padding: 1rem 0;
+  gap: 2rem;
+}
 
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
 
-    .banner {
-      background: #1d8cf8;
-      color: white;
-      padding: 2rem 1rem;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 16px rgb(29 140 248 / 0.3);
-    }
+nav a:hover {
+  color: #ddd;
+}
 
-    .game-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 1.5rem;
-    }
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: var(--white);
+}
 
-    .game-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
-      padding: 1.2rem;
-      transition: box-shadow 0.3s ease;
-    }
+.hero h2 {
+  font-size: 2rem;
+}
 
-    .game-card:hover {
-      box-shadow: 0 8px 20px rgb(29 140 248 / 0.3);
-    }
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+}
 
-    .game-card img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-    }
+.game-card {
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 2rem 1rem;
+  transition: transform 0.3s;
+}
 
-    .game-card h2 {
-      color: #1d8cf8;
-      margin-bottom: 0.8rem;
-      font-size: 1.3rem;
-      text-align: center;
-    }
+.game-card:hover {
+  transform: translateY(-5px);
+}
 
-    .prices {
-      list-style: none;
-      margin-bottom: 1.2rem;
-    }
+.game-card img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
 
-    .prices li {
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #444;
-    }
+.game-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
 
-    .order-btn {
-      display: block;
-      text-align: center;
-      background: #3358f4;
-      color: white;
-      padding: 0.7rem 0;
-      border-radius: 25px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
+.game-card ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
 
-    .order-btn:hover {
-      background: #1d8cf8;
-    }
+.game-card li {
+  margin: 5px 0;
+}
 
-    footer {
-      text-align: center;
-      padding: 1rem 1rem;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
+.order-btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: background 0.3s;
+}
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
+.order-btn:hover {
+  background: #0051cc;
+}
 
-      .game-card h2 {
-        font-size: 1.1rem;
-      }
-    }
+footer {
+  background: #e0e0e0;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
   </style>
 </head>
 <body>
-
-<header>
-  <h1>jayytopup</h1>
-  <p>Top Up Game Murah & Cepat - MLBB, Free Fire, PUBG</p>
-</header>
-
-<main>
-  <div class="banner">
-    Promo Terbaik! Top Up Aman & Cepat Langsung via WhatsApp
-  </div>
-
-  <section class="game-list">
-    <div class="game-card">
-      <img src="https://static.wikia.nocookie.net/mobile-legends/images/3/34/Mobile_Legends_Logo.png" alt="Mobile Legends" />
-      <h2>Mobile Legends (MLBB)</h2>
-      <ul class="prices">
-        <li>Diamond 12 = Rp12.000</li>
-        <li>Diamond 50 = Rp48.000</li>
-        <li>Diamond 100 = Rp95.000</li>
+  <header>
+    <h1>jayytopup</h1>
+    <p>Top Up Game Otomatis | Cepat | Aman | Murah</p>
+  </header>
+  <nav>
+    <a href="#mlbb">MLBB</a>
+    <a href="#ff">Free Fire</a>
+    <a href="#pubg">PUBG</a>
+  </nav>
+  <section class="hero">
+    <h2>Top Up Game Murah & Otomatis</h2>
+    <p>Proses cepat 1-3 menit, 24 jam nonstop. Order via WhatsApp sekarang!</p>
+  </section>
+  <section class="games">
+    <div class="game-card" id="mlbb">
+      <img src="https://cdn.worldvectorlogo.com/logos/mobile-legends.svg" alt="MLBB">
+      <h3>Mobile Legends</h3>
+      <ul>
+        <li>86 Diamond - Rp 20.000</li>
+        <li>172 Diamond - Rp 40.000</li>
+        <li>256 Diamond - Rp 60.000</li>
       </ul>
-      <a href="https://wa.me/6283117309346" class="order-btn" target="_blank">Order via WhatsApp</a>
+      <a class="order-btn" href="https://wa.me/6283117309346" target="_blank">Order MLBB</a>
     </div>
-
-    <div class="game-card">
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Free_Fire_Logo.svg/1200px-Free_Fire_Logo.svg.png" alt="Free Fire" />
-      <h2>Free Fire (FF)</h2>
-      <ul class="prices">
-        <li>Diamond 10 = Rp9.000</li>
-        <li>Diamond 50 = Rp40.000</li>
-        <li>Diamond 100 = Rp78.000</li>
+    <div class="game-card" id="ff">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Free_Fire_logo.png" alt="Free Fire">
+      <h3>Free Fire</h3>
+      <ul>
+        <li>70 Diamond - Rp 10.000</li>
+        <li>140 Diamond - Rp 20.000</li>
+        <li>355 Diamond - Rp 50.000</li>
       </ul>
-      <a href="https://wa.me/6283117309346" class="order-btn" target="_blank">Order via WhatsApp</a>
+      <a class="order-btn" href="https://wa.me/6283117309346" target="_blank">Order Free Fire</a>
     </div>
-
-    <div class="game-card">
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/PUBG_logo.svg/1200px-PUBG_logo.svg.png" alt="PUBG Mobile" />
-      <h2>PUBG Mobile</h2>
-      <ul class="prices">
-        <li>UC 60 = Rp10.000</li>
-        <li>UC 300 = Rp48.000</li>
-        <li>UC 600 = Rp90.000</li>
+    <div class="game-card" id="pubg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/PUBG_logo.svg" alt="PUBG">
+      <h3>PUBG Mobile</h3>
+      <ul>
+        <li>60 UC - Rp 12.000</li>
+        <li>300 UC - Rp 55.000</li>
+        <li>600 UC - Rp 100.000</li>
       </ul>
-      <a href="https://wa.me/6283117309346" class="order-btn" target="_blank">Order via WhatsApp</a>
+      <a class="order-btn" href="https://wa.me/6283117309346" target="_blank">Order PUBG</a>
     </div>
   </section>
-</main>
-
-<footer>
-  &copy; 2025 jayytopup • Hubungi: 083117309346
-</footer>
-
+  <footer>
+    &copy; 2025 jayytopup | Order via WhatsApp: 083117309346
+  </footer>
 </body>
 </html>
