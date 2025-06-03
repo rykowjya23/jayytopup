@@ -1,182 +1,91 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jayytopup - Top Up Game Premium</title>
-<style>
-  /* Reset & base */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0d3b66, #3a7bd5);
-    color: #f0f4f8;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Header */
-  header {
-    background: rgba(0, 75, 173, 0.9);
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-  header h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #cce0ff;
-    margin: 0;
-  }
-  nav a {
-    color: #cce0ff;
-    margin-left: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-  }
-  nav a:hover {
-    color: #fff;
-  }
-
-  /* Main Content */
-  main {
-    flex: 1;
-    max-width: 700px;
-    margin: 40px auto 60px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 30px 40px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-    backdrop-filter: blur(12px);
-  }
-
-  .hero {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  .hero h2 {
-    font-size: 2.6rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    color: #d0e6ff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  }
-  .hero p {
-    font-size: 1.3rem;
-    color: #b0c9ff;
-  }
-
-  /* Form Styles */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  label {
-    margin-top: 20px;
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: #cce0ff;
-  }
-  input[type="text"], input[type="number"], select {
-    margin-top: 8px;
-    padding: 14px 18px;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: none;
-    background: rgba(255, 255, 255, 0.15);
-    color: #003366;
-    font-weight: 600;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  input[type="text"]::placeholder,
-  input[type="number"]::placeholder {
-    color: #99bfff;
-    font-weight: 400;
-  }
-  input[type="text"]:focus,
-  input[type="number"]:focus,
-  select:focus {
-    background: #e1eaff;
-    color: #003366;
-    outline: none;
-  }
-
-  /* Button */
-  button[type="submit"] {
-    margin-top: 35px;
-    padding: 16px;
-    background: #004aad;
-    color: #f0f4f8;
-    font-weight: 800;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    box-shadow: 0 6px 15px rgba(0, 74, 173, 0.7);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-  }
-  button[type="submit"]:hover {
-    background: #00316a;
-    box-shadow: 0 8px 20px rgba(0, 49, 106, 0.9);
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #002244;
-    color: #a3bffa;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  /* Responsive */
-  @media(max-width: 720px) {
-    main {
-      margin: 20px 20px 40px;
-      padding: 25px 20px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jayytopup - Top Up Game Premium</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a1f44;
+      color: #f8f5f0;
     }
+
     header {
-      flex-direction: column;
-      gap: 10px;
-      padding: 15px 20px;
+      background: #0a1f44;
+      padding: 20px;
+      border-bottom: 3px solid #d4af37;
+      text-align: center;
     }
-    nav a {
-      margin-left: 0;
-      margin-right: 15px;
+    header h1 {
+      color: #d4af37;
+      margin: 0;
     }
-  }
-</style>
+
+    main {
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      background: transparent;
+      border: 2px solid #d4af37;
+      border-radius: 8px;
+      color: #f8f5f0;
+    }
+    input::placeholder {
+      color: #d4af37cc;
+    }
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 14px;
+      background: #d4af37;
+      color: #0a1f44;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #b3912d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #d4af37aa;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Jayytopup</h1>
+  </header>
 
-<header>
-  <h1>Jayytopup</h1>
-  <nav>
-    <a href="#order">Order Sekarang</a>
-    <a href="#about">Tentang Kami</a>
-  </nav>
-</header>
-
-<main>
-  <section class="hero">
-    <h2>Top Up Game Cepat & Aman</h2>
-    <p>Mobile Legends, Free Fire, PUBG Mobile & lainnya, semua tersedia di Jayytopup.</p>
-  </section>
-
-  <section id="order">
+  <main>
+    <h2 style="color:#d4af37; text-align:center;">Top Up Game Premium</h2>
     <form id="orderForm">
-      <label for="userId">Masukkan ID Game Anda</label>
+      <label for="userId">ID Game</label>
       <input type="text" id="userId" name="userId" placeholder="Contoh: 123456789" required />
+
+      <label for="server">Server (opsional)</label>
+      <input type="text" id="server" name="server" placeholder="Contoh: 1234 (jika ada)" />
 
       <label for="game">Pilih Game</label>
       <select id="game" name="game" required>
@@ -186,73 +95,53 @@
         <option value="PUBG Mobile">PUBG Mobile</option>
       </select>
 
-      <label for="diamond">Masukkan Nominal Diamond / UC</label>
-      <input type="number" id="diamond" name="diamond" min="1" placeholder="Masukkan nominal diamond/UC" required />
+      <label for="diamond">Nominal Diamond/UC</label>
+      <input type="number" id="diamond" name="diamond" min="1" placeholder="Masukkan jumlah" required />
 
-      <label for="payment">Pilih Metode Pembayaran</label>
+      <label for="payment">Metode Pembayaran</label>
       <select id="payment" name="payment" required>
         <option value="" disabled selected>Pilih metode pembayaran</option>
-        <option value="Transfer Bank">Transfer Bank</option>
-        <option value="OVO">OVO</option>
-        <option value="GoPay">GoPay</option>
         <option value="COD">Cash on Delivery (COD)</option>
+        <option value="QRIS">QRIS</option>
       </select>
 
-      <button type="submit">Kirim Order via WhatsApp</button>
+      <button type="submit">Kirim Pesanan via WhatsApp</button>
     </form>
-  </section>
+  </main>
 
-  <section id="about" style="margin-top: 50px; text-align:center; color:#b0c9ff;">
-    <h3>Tentang Jayytopup</h3>
-    <p>Jayytopup adalah layanan top up game terpercaya dengan proses cepat dan aman. Nikmati kemudahan pembayaran dan layanan pelanggan terbaik.</p>
-  </section>
-</main>
+  <footer>
+    &copy; 2025 Jayytopup. All rights reserved.
+  </footer>
 
-<footer>
-  &copy; 2025 Jayytopup. All rights reserved.
-</footer>
+  <script>
+    const orderForm = document.getElementById('orderForm');
+    const waNumber = '6283117309346';
 
-<script>
-  const orderForm = document.getElementById('orderForm');
-  const waNumber = '6283117309346'; // Nomor WhatsApp tujuan
+    orderForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const userId = orderForm.userId.value.trim();
+      const server = orderForm.server.value.trim();
+      const game = orderForm.game.value;
+      const diamond = orderForm.diamond.value.trim();
+      const payment = orderForm.payment.value;
 
-  orderForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+      let message = `Halo Tim Jayytopup,%0ASaya ingin melakukan top up:%0A` +
+                    `- ID: ${userId}%0A`;
+      if(server) message += `- Server: ${server}%0A`;
+      message += `- Game: ${game}%0A` +
+                 `- Nominal: ${diamond} Diamond/UC%0A` +
+                 `- Pembayaran: ${payment}%0A`;
 
-    const userId = orderForm.userId.value.trim();
-    const game = orderForm.game.value;
-    const diamond = orderForm.diamond.value.trim();
-    const payment = orderForm.payment.value;
+      if(payment === 'COD') {
+        message += `%0ASaya pilih pembayaran COD. Mohon info lanjutannya.`;
+      } else {
+        message += `%0ASaya pilih QRIS. Mohon kirimkan QR untuk pembayaran.`;
+      }
 
-    if (!userId || !game || !diamond || !payment) {
-      alert('Mohon lengkapi semua data dengan benar.');
-      return;
-    }
-
-    if (isNaN(diamond) || Number(diamond) < 1) {
-      alert('Nominal diamond harus angka dan minimal 1.');
-      return;
-    }
-
-    let message = `Halo Tim Jayytopup,\n` +
-                  `Saya ingin melakukan order top up dengan detail berikut:\n` +
-                  `- ID Game: ${userId}\n` +
-                  `- Game: ${game}\n` +
-                  `- Nominal Diamond/UC: ${diamond}\n` +
-                  `- Metode Pembayaran: ${payment}\n\n`;
-
-    if(payment === 'COD') {
-      message += "Saya memilih pembayaran Cash on Delivery (COD). Mohon informasi proses selanjutnya.\n";
-    } else {
-      message += "Mohon informasi cara pembayaran dan konfirmasi order saya.\n";
-    }
-
-    message += "\nTerima kasih.";
-
-    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
-    window.open(waUrl, '_blank');
-  });
-</script>
-
+      message += `%0ATerima kasih.`;
+      const waUrl = `https://wa.me/${waNumber}?text=${message}`;
+      window.open(waUrl, '_blank');
+    });
+  </script>
 </body>
 </html>
