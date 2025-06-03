@@ -1,74 +1,80 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jayytopup - Top Up Game Premium</title>
+  <title>Jayytopup - Top Up Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0a1f44;
-      color: #f8f5f0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
     }
-
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
     header {
-      background: #0a1f44;
-      padding: 20px;
-      border-bottom: 3px solid #d4af37;
+      background-color: #1c2b36;
+      padding: 30px;
       text-align: center;
+      border-bottom: 4px solid #00c3ff;
     }
     header h1 {
-      color: #d4af37;
-      margin: 0;
+      color: #00c3ff;
+      font-size: 2.2rem;
     }
-
     main {
-      max-width: 600px;
+      max-width: 500px;
       margin: 40px auto;
-      background: rgba(255, 255, 255, 0.05);
+      background: #243b55;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0, 195, 255, 0.2);
     }
-
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00c3ff;
+    }
     label {
       display: block;
       margin-top: 20px;
-      font-weight: bold;
+      font-weight: 600;
     }
     input, select {
       width: 100%;
       padding: 12px;
-      margin-top: 8px;
-      background: transparent;
-      border: 2px solid #d4af37;
+      margin-top: 6px;
+      background: #1e2d3d;
+      border: 2px solid #00c3ff;
       border-radius: 8px;
-      color: #f8f5f0;
+      color: #fff;
     }
     input::placeholder {
-      color: #d4af37cc;
+      color: #ccc;
     }
     button {
-      margin-top: 30px;
       width: 100%;
       padding: 14px;
-      background: #d4af37;
-      color: #0a1f44;
-      font-weight: bold;
+      margin-top: 30px;
+      background-color: #00c3ff;
+      color: #0f1e2e;
       font-size: 1.1rem;
+      font-weight: bold;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      transition: background 0.3s;
     }
     button:hover {
-      background: #b3912d;
+      background-color: #00a4cc;
     }
-
     footer {
       text-align: center;
       padding: 20px;
-      color: #d4af37aa;
+      color: #ccc;
       font-size: 0.9rem;
     }
   </style>
@@ -76,44 +82,37 @@
 <body>
   <header>
     <h1>Jayytopup</h1>
-  </header>
-
-  <main>
-    <h2 style="color:#d4af37; text-align:center;">Top Up Game Premium</h2>
+  </header>  <main>
+    <h2>Formulir Top Up Game</h2>
     <form id="orderForm">
       <label for="userId">ID Game</label>
-      <input type="text" id="userId" name="userId" placeholder="Contoh: 123456789" required />
+      <input type="text" id="userId" name="userId" placeholder="Contoh: 123456789" required /><label for="server">Server (opsional)</label>
+  <input type="text" id="server" name="server" placeholder="Contoh: 1234 (jika ada)" />
 
-      <label for="server">Server (opsional)</label>
-      <input type="text" id="server" name="server" placeholder="Contoh: 1234 (jika ada)" />
+  <label for="game">Pilih Game</label>
+  <select id="game" name="game" required>
+    <option value="" disabled selected>Pilih game</option>
+    <option value="Mobile Legends (MLBB)">Mobile Legends (MLBB)</option>
+    <option value="Free Fire">Free Fire</option>
+    <option value="PUBG Mobile">PUBG Mobile</option>
+  </select>
 
-      <label for="game">Pilih Game</label>
-      <select id="game" name="game" required>
-        <option value="" disabled selected>Pilih game</option>
-        <option value="Mobile Legends (MLBB)">Mobile Legends (MLBB)</option>
-        <option value="Free Fire">Free Fire</option>
-        <option value="PUBG Mobile">PUBG Mobile</option>
-      </select>
+  <label for="diamond">Nominal Diamond/UC</label>
+  <input type="number" id="diamond" name="diamond" min="1" placeholder="Masukkan jumlah" required />
 
-      <label for="diamond">Nominal Diamond/UC</label>
-      <input type="number" id="diamond" name="diamond" min="1" placeholder="Masukkan jumlah" required />
+  <label for="payment">Metode Pembayaran</label>
+  <select id="payment" name="payment" required>
+    <option value="" disabled selected>Pilih metode pembayaran</option>
+    <option value="COD">Cash on Delivery (COD)</option>
+    <option value="QRIS">QRIS</option>
+  </select>
 
-      <label for="payment">Metode Pembayaran</label>
-      <select id="payment" name="payment" required>
-        <option value="" disabled selected>Pilih metode pembayaran</option>
-        <option value="COD">Cash on Delivery (COD)</option>
-        <option value="QRIS">QRIS</option>
-      </select>
+  <button type="submit">Kirim Pesanan via WhatsApp</button>
+</form>
 
-      <button type="submit">Kirim Pesanan via WhatsApp</button>
-    </form>
-  </main>
-
-  <footer>
-    &copy; 2025 Jayytopup. All rights reserved.
-  </footer>
-
-  <script>
+  </main>  <footer>
+    &copy; 2025 Jayytopup. Website by ChatGPT.
+  </footer>  <script>
     const orderForm = document.getElementById('orderForm');
     const waNumber = '6283117309346';
 
@@ -142,6 +141,5 @@
       const waUrl = `https://wa.me/${waNumber}?text=${message}`;
       window.open(waUrl, '_blank');
     });
-  </script>
-</body>
+  </script></body>
 </html>
