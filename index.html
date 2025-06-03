@@ -1,43 +1,46 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jayytopup - Order Top Up Game</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jayytopup - Top Up Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       font-family: 'Inter', sans-serif;
     }
     body {
-      background: linear-gradient(to right, #141e30, #243b55);
-      color: #fff;
+      background-color: #1f2937; /* navy/abu gelap */
+      color: #f1f5f9; /* abu muda */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header {
-      background-color: #1a1f2b;
-      padding: 40px 20px;
+      background-color: #111827;
+      padding: 20px;
+      border-bottom: 3px solid #ff6a13; /* oranye UniPin */
       text-align: center;
-      border-bottom: 4px solid #4fd1c5;
-    }
-    header h1 {
-      color: #4fd1c5;
-      font-size: 2.5rem;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #ff6a13;
     }
     main {
-      max-width: 550px;
-      margin: 50px auto;
-      background: #1e293b;
+      flex: 1;
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #111827;
       padding: 40px;
       border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 24px rgba(255, 106, 19, 0.3);
     }
     h2 {
+      color: #ff6a13;
       text-align: center;
       margin-bottom: 30px;
-      color: #4fd1c5;
-      font-size: 1.8rem;
+      font-weight: 600;
     }
     label {
       display: block;
@@ -49,73 +52,82 @@
       width: 100%;
       padding: 14px;
       margin-top: 8px;
-      background: #0f172a;
-      border: 2px solid #4fd1c5;
+      background: #1f2937;
+      border: 2px solid #ff6a13;
       border-radius: 10px;
-      color: #e2e8f0;
+      color: #f1f5f9;
       font-size: 1rem;
+      transition: border-color 0.3s ease;
     }
     input::placeholder {
-      color: #94a3b8;
+      color: #9ca3af;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #ff6a13;
+      box-shadow: 0 0 8px #ff6a13;
     }
     button {
       width: 100%;
       padding: 16px;
       margin-top: 40px;
-      background-color: #4fd1c5;
-      color: #0f172a;
+      background-color: #ff6a13;
+      color: #111827;
       font-size: 1.1rem;
-      font-weight: 600;
+      font-weight: 700;
       border: none;
       border-radius: 12px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #38b2ac;
+      background-color: #e85b0f;
     }
     footer {
       text-align: center;
       padding: 30px;
-      color: #cbd5e1;
-      font-size: 0.95rem;
+      color: #9ca3af;
+      font-size: 0.9rem;
+      background-color: #111827;
+      border-top: 1px solid #2c3e50;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Jayytopup</h1>
-  </header>  <main>
+  <header>Jayytopup</header>
+  <main>
     <h2>🎮 Top Up Games 🔥</h2>
     <form id="orderForm">
       <label for="userId">🆔 ID Game</label>
-      <input type="text" id="userId" name="userId" placeholder="Contoh: 123456789" required /><label for="server">🌐 Server (opsional)</label>
-  <input type="text" id="server" name="server" placeholder="Contoh: 1234 (jika ada)" />
+      <input type="text" id="userId" name="userId" placeholder="Contoh: 123456789" required />
 
-  <label for="game">🎯 Pilih Game</label>
-  <select id="game" name="game" required>
-    <option value="" disabled selected>Pilih game</option>
-    <option value="Mobile Legends (MLBB)">Mobile Legends (MLBB)</option>
-    <option value="Free Fire">Free Fire</option>
-    <option value="PUBG Mobile">PUBG Mobile</option>
-  </select>
+      <label for="server">🌐 Server (opsional)</label>
+      <input type="text" id="server" name="server" placeholder="Contoh: 1234 (jika ada)" />
 
-  <label for="diamond">💎 Nominal Diamond/UC</label>
-  <input type="number" id="diamond" name="diamond" min="1" placeholder="Masukkan jumlah" required />
+      <label for="game">🎯 Pilih Game</label>
+      <select id="game" name="game" required>
+        <option value="" disabled selected>Pilih game</option>
+        <option value="Mobile Legends (MLBB)">Mobile Legends (MLBB)</option>
+        <option value="Free Fire">Free Fire</option>
+        <option value="PUBG Mobile">PUBG Mobile</option>
+      </select>
 
-  <label for="payment">💰 Metode Pembayaran</label>
-  <select id="payment" name="payment" required>
-    <option value="" disabled selected>Pilih metode pembayaran</option>
-    <option value="COD">Cash on Delivery (COD)</option>
-    <option value="QRIS">QRIS</option>
-  </select>
+      <label for="diamond">💎 Nominal Diamond/UC</label>
+      <input type="number" id="diamond" name="diamond" min="1" placeholder="Masukkan jumlah" required />
 
-  <button type="submit">📩 Kirim via WhatsApp</button>
-</form>
+      <label for="payment">💰 Metode Pembayaran</label>
+      <select id="payment" name="payment" required>
+        <option value="" disabled selected>Pilih metode pembayaran</option>
+        <option value="COD">Cash on Delivery (COD)</option>
+        <option value="QRIS">QRIS</option>
+      </select>
 
-  </main>  <footer>
-    &copy; 2025 Jayytopup. Website by ChatGPT.
-  </footer>  <script>
+      <button type="submit">📩 Kirim via WhatsApp</button>
+    </form>
+  </main>
+  <footer>&copy; 2025 Jayytopup. Website by ChatGPT.</footer>
+
+  <script>
     const orderForm = document.getElementById('orderForm');
     const waNumber = '6283117309346';
 
@@ -144,5 +156,6 @@
       const waUrl = `https://wa.me/${waNumber}?text=${message}`;
       window.open(waUrl, '_blank');
     });
-  </script></body>
+  </script>
+</body>
 </html>
