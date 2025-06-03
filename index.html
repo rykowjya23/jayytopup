@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>jayytopup - Pilih Game Top Up</title>
+  <title>jayytopup - Pilih Game Top Up & Payment</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -14,19 +14,19 @@
       text-align: center;
     }
     #gameLogo {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       object-fit: contain;
       margin-bottom: 1rem;
       transition: opacity 0.3s ease;
     }
-    select {
+    #gameSelect {
       font-size: 1.2rem;
       padding: 0.6rem;
       width: 220px;
       margin-bottom: 1rem;
     }
-    .btn-order {
+    #orderBtn {
       display: inline-block;
       padding: 0.8rem 1.6rem;
       background: #007bff;
@@ -34,33 +34,93 @@
       text-decoration: none;
       border-radius: 5px;
       font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    #paymentMethods {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: left;
+      background: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #paymentMethods h3 {
+      color: #007bff;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .payment-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .payment-list li {
+      flex: 1 1 100px;
+      text-align: center;
+      font-weight: 600;
+      color: #333;
+    }
+    .payment-list img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <h1>jayytopup</h1>
-  <p>Pilih game yang ingin kamu top up:</p>
+  <h1 id="headerTitle">jayytopup</h1>
+  <p id="headerSubtitle">Pilih game yang ingin kamu top up:</p>
 
   <img
     id="gameLogo"
-    src="https://upload.wikimedia.org/wikipedia/en/5/5c/Mobile_Legends_Logo.png"
+    src="https://cdn-icons-png.flaticon.com/128/5968/5968316.png"
     alt="Logo Game"
   />
   <br />
 
-  <select id="gameSelect">
-    <option value="MLBB">Mobile Legends</option>
-    <option value="Free Fire">Free Fire</option>
-    <option value="PUBG">PUBG</option>
+  <select id="gameSelect" name="gameSelect">
+    <option value="MLBB" id="optionMLBB">Mobile Legends</option>
+    <option value="Free Fire" id="optionFF">Free Fire</option>
+    <option value="PUBG" id="optionPUBG">PUBG</option>
   </select>
   <br />
   <a
     id="orderBtn"
-    class="btn-order"
     href="https://wa.me/6283117309346?text=Halo%20saya%20ingin%20top%20up%20Mobile%20Legends"
     target="_blank"
-    >Order Sekarang</a
-  >
+  >Order Sekarang</a>
+
+  <div id="paymentMethods">
+    <h3>Metode Pembayaran</h3>
+    <ul class="payment-list">
+      <li>
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Gopay" />
+        Gopay
+      </li>
+      <li>
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Dana" />
+        Dana
+      </li>
+      <li>
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" alt="OVO" />
+        OVO
+      </li>
+      <li>
+        <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Bank Transfer" />
+        Bank Transfer
+      </li>
+      <li>
+        <img src="https://cdn-icons-png.flaticon.com/512/2621/2621297.png" alt="Bayar di Tempat" />
+        Bayar di Tempat
+      </li>
+    </ul>
+  </div>
 
   <script>
     const select = document.getElementById('gameSelect');
@@ -68,9 +128,9 @@
     const gameLogo = document.getElementById('gameLogo');
 
     const logos = {
-      MLBB: 'https://upload.wikimedia.org/wikipedia/en/5/5c/Mobile_Legends_Logo.png',
-      'Free Fire': 'https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Free_Fire_logo.png/1200px-Free_Fire_logo.png',
-      PUBG: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/PUBG_logo.svg/1200px-PUBG_logo.svg.png',
+      MLBB: 'https://cdn-icons-png.flaticon.com/128/5968/5968316.png',
+      'Free Fire': 'https://cdn-icons-png.flaticon.com/128/5968/5968324.png',
+      PUBG: 'https://cdn-icons-png.flaticon.com/128/5968/5968319.png',
     };
 
     select.addEventListener('change', () => {
@@ -79,10 +139,8 @@
 
       if (game === 'MLBB') gameText = 'Mobile Legends';
 
-      // Update link WA
       orderBtn.href = `https://wa.me/6283117309346?text=Halo%20saya%20ingin%20top%20up%20${encodeURIComponent(gameText)}`;
 
-      // Ganti logo
       gameLogo.style.opacity = 0;
       setTimeout(() => {
         gameLogo.src = logos[game];
