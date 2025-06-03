@@ -1,215 +1,174 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>jayytopup - Top Up Game</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    body, html {
-      margin: 0; padding: 0; height: 100%;
-      font-family: 'Poppins', sans-serif;
-      background: #fff;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-    }
-    .container {
-      width: 360px;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
-      padding: 2rem;
-      background: #fff;
-    }
-    h1 {
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      color: #007bff; /* biru */
-      text-align: center;
-    }
-    label {
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #555;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 0.7rem 1rem;
-      font-size: 1rem;
-      border: 1.5px solid #ddd;
-      border-radius: 6px;
-      margin-bottom: 1.5rem;
-      transition: border-color 0.3s;
-    }
-    input[type="text"]:focus {
-      border-color: #007bff;
-      outline: none;
-      box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
-    }
-    .game-select {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-      gap: 0.7rem;
-    }
-    .game-card {
-      flex: 1;
-      border: 1.5px solid #ddd;
-      border-radius: 6px;
-      text-align: center;
-      padding: 1rem 0;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: #666;
-      cursor: pointer;
-      user-select: none;
-      transition: all 0.3s ease;
-    }
-    .game-card.selected {
-      background-color: #007bff;
-      color: white;
-      border-color: #007bff;
-      box-shadow: 0 2px 10px rgba(0, 123, 255, 0.4);
-    }
-    .game-card:hover:not(.selected) {
-      border-color: #007bff;
-      color: #007bff;
-    }
-    button.order-btn {
-      width: 100%;
-      background-color: #007bff;
-      border: none;
-      color: white;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 0.8rem 0;
-      border-radius: 6px;
-      cursor: pointer;
-      opacity: 0.5;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    button.order-btn.enabled {
-      opacity: 1;
-      pointer-events: auto;
-      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.6);
-    }
-    .payment-methods {
-      margin-top: 2rem;
-      border-top: 1px solid #eee;
-      padding-top: 1rem;
-      text-align: center;
-    }
-    .payment-methods h3 {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      color: #555;
-    }
-    .payment-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .payment-icons img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-      cursor: default;
-      filter: grayscale(20%);
-      transition: filter 0.3s ease;
-    }
-    .payment-icons img:hover {
-      filter: none;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jayytopup - Top Up Game Cepat & Aman</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: #fff;
+    margin: 0; padding: 0;
+  }
+  header {
+    background: #1f2937;
+    padding: 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fbbf24;
+  }
+  nav a {
+    color: #fbbf24;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  main {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  .hero {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .hero h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  /* Paket dihilangkan karena harga dan diamond dihapus */
+  form {
+    background: #1f2937;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  form h3 {
+    margin-top: 0;
+    color: #fbbf24;
+  }
+  label {
+    display: block;
+    margin-top: 15px;
+  }
+  select, input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+  }
+  button[type="submit"] {
+    margin-top: 20px;
+    background: #fbbf24;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #121212;
+  }
+  button[type="submit"]:hover {
+    background: #d1a10b;
+  }
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: #111827;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #9ca3af;
+  }
+</style>
 </head>
 <body>
-  <div class="container" role="main">
-    <h1>jayytopup</h1>
 
-    <label for="playerId">Masukkan ID Player</label>
-    <input type="text" id="playerId" placeholder="Contoh: 123456789" autocomplete="off" />
+<header>
+  <h1>Jayytopup</h1>
+  <nav>
+    <a href="#order">Order</a>
+  </nav>
+</header>
 
-    <div class="game-select" role="list" aria-label="Pilih game">
-      <div class="game-card" data-game="Mobile Legends" tabindex="0" role="listitem" aria-selected="false">
-        Mobile Legends
-      </div>
-      <div class="game-card" data-game="Free Fire" tabindex="0" role="listitem" aria-selected="false">
-        Free Fire
-      </div>
-      <div class="game-card" data-game="PUBG" tabindex="0" role="listitem" aria-selected="false">
-        PUBG
-      </div>
-    </div>
+<main>
+  <section class="hero">
+    <h2>Top Up Game Cepat & Aman di Jayytopup</h2>
+    <p>Mobile Legends, Free Fire, PUBG Mobile — semua ada di Jayytopup!</p>
+  </section>
 
-    <button class="order-btn" id="orderBtn" disabled>Order Sekarang</button>
+  <section id="order">
+    <form id="orderForm">
+      <h3>Order Top Up di Jayytopup</h3>
 
-    <div class="payment-methods" aria-label="Metode pembayaran">
-      <h3>Metode Pembayaran</h3>
-      <div class="payment-icons">
-        <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Gopay" title="Gopay" />
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Dana" title="Dana" />
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968672.png" alt="OVO" title="OVO" />
-        <img src="https://cdn-icons-png.flaticon.com/512/126/126510.png" alt="Bank Transfer" title="Bank Transfer" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1239/1239525.png" alt="Bayar di Tempat" title="Bayar di Tempat" />
-      </div>
-    </div>
-  </div>
+      <label for="game">Game</label>
+      <select id="game" name="game" required>
+        <option value="" disabled selected>Pilih game</option>
+        <option value="Mobile Legends (MLBB)">Mobile Legends (MLBB)</option>
+        <option value="Free Fire">Free Fire</option>
+        <option value="PUBG Mobile">PUBG Mobile</option>
+      </select>
 
-  <script>
-    const gameCards = document.querySelectorAll('.game-card');
-    const playerIdInput = document.getElementById('playerId');
-    const orderBtn = document.getElementById('orderBtn');
+      <label for="payment">Metode Pembayaran</label>
+      <select id="payment" name="payment" required>
+        <option value="" disabled selected>Pilih metode pembayaran</option>
+        <option value="Transfer Bank">Transfer Bank</option>
+        <option value="OVO">OVO</option>
+        <option value="GoPay">GoPay</option>
+        <option value="COD">Cash on Delivery (COD)</option>
+      </select>
 
-    let selectedGame = null;
+      <label for="phone">Nomor WhatsApp Anda</label>
+      <input type="tel" id="phone" name="phone" placeholder="contoh: 6281234567890" required />
 
-    function updateOrderButton() {
-      const idValue = playerIdInput.value.trim();
-      if (selectedGame && idValue.length > 0) {
-        orderBtn.disabled = false;
-        orderBtn.classList.add('enabled');
-      } else {
-        orderBtn.disabled = true;
-        orderBtn.classList.remove('enabled');
-      }
+      <button type="submit">Order via WhatsApp</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Jayytopup. All rights reserved.
+</footer>
+
+<script>
+  const orderForm = document.getElementById('orderForm');
+
+  orderForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const game = orderForm.game.value;
+    const payment = orderForm.payment.value;
+    const phone = orderForm.phone.value.trim();
+
+    if (!game || !payment || !phone) {
+      alert('Mohon lengkapi semua data dengan benar.');
+      return;
     }
 
-    gameCards.forEach(card => {
-      card.addEventListener('click', () => {
-        gameCards.forEach(c => {
-          c.classList.remove('selected');
-          c.setAttribute('aria-selected', 'false');
-        });
-        card.classList.add('selected');
-        card.setAttribute('aria-selected', 'true');
-        selectedGame = card.getAttribute('data-game');
-        updateOrderButton();
-      });
-      card.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.click();
-        }
-      });
-    });
+    let message = `Halo Tim Jayytopup,\nSaya ingin melakukan order top up:\n` +
+                  `- Game: ${game}\n` +
+                  `- Metode Pembayaran: ${payment}\n\n`;
 
-    playerIdInput.addEventListener('input', updateOrderButton);
+    if(payment === 'COD') {
+      message += "Saya memilih pembayaran Cash on Delivery (COD). Mohon informasi lebih lanjut tentang prosesnya.\n";
+    } else {
+      message += "Mohon informasi detail cara pembayaran dan konfirmasi order saya.\n";
+    }
 
-    orderBtn.addEventListener('click', () => {
-      const idValue = playerIdInput.value.trim();
-      if (!selectedGame || idValue.length === 0) return;
-      const waText = `Halo saya ingin top up ${selectedGame} dengan ID Player ${idValue}`;
-      const waLink = `https://wa.me/6283117309346?text=${encodeURIComponent(waText)}`;
-      window.open(waLink, '_blank');
-    });
-  </script>
+    message += "\nTerima kasih.";
+
+    const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, '_blank');
+  });
+</script>
+
 </body>
 </html>
