@@ -1,80 +1,147 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>jayytopup | Top Up MLBB, Free Fire, PUBG</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>jayytopup - Top Up Game Murah</title>
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-    header { background: #1e40af; color: white; padding: 1em; text-align: center; }
-    main { padding: 1em; }
-    .game-section { background: white; padding: 1em; margin-bottom: 1em; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    h2 { color: #1e40af; }
-    label { display: block; margin: 0.5em 0 0.2em; }
-    input, select, button { width: 100%; padding: 0.5em; margin-bottom: 1em; border-radius: 5px; border: 1px solid #ccc; }
-    button { background: #1e40af; color: white; border: none; cursor: pointer; }
-    footer { text-align: center; padding: 1em; font-size: 0.9em; color: #555; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f0f6ff;
+      color: #0d47a1;
+    }
+    header {
+      background: #1565c0;
+      padding: 1.5em 1em;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+    }
+    header p {
+      margin: 0.5em 0 0;
+      font-size: 1.2em;
+    }
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+    .banner {
+      background: #42a5f5;
+      color: white;
+      padding: 2em 1em;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 2em;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+    .price-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap: 1.5em;
+    }
+    .game-card {
+      background: white;
+      padding: 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgb(21 101 192 / 0.2);
+      text-align: center;
+    }
+    .game-card h2 {
+      margin-top: 0;
+      color: #0d47a1;
+    }
+    .game-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 1em 0;
+      font-size: 1.1em;
+    }
+    .game-card li {
+      margin-bottom: 0.5em;
+    }
+    .btn-order {
+      display: inline-block;
+      background: #0d47a1;
+      color: white;
+      padding: 0.7em 1.5em;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .btn-order:hover {
+      background: #1565c0;
+    }
+    footer {
+      text-align: center;
+      padding: 1em 1em;
+      background: #e3f2fd;
+      color: #0d47a1;
+      margin-top: 3em;
+      font-size: 0.9em;
+    }
+    @media (max-width: 600px) {
+      .price-list {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>jayytopup</h1>
-    <p>Top Up Game MLBB, Free Fire, dan PUBG</p>
-  </header>
-  <main>
-    <form id="topupForm">
-      <div class="game-section">
-        <h2>Form Top Up</h2>
-        <label for="game">Pilih Game:</label>
-        <select id="game" required>
-          <option value="MLBB">Mobile Legends</option>
-          <option value="FF">Free Fire</option>
-          <option value="PUBG">PUBG Mobile</option>
-        </select>
 
-        <label for="id">Player ID:</label>
-        <input type="text" id="id" placeholder="Masukkan ID" required>
+<header>
+  <h1>🎮 jayytopup</h1>
+  <p>Top Up Game MLBB, Free Fire, PUBG - Harga Termurah & Cepat</p>
+</header>
 
-        <label for="server">Server (jika ada):</label>
-        <input type="text" id="server" placeholder="Masukkan server (jika perlu)">
+<main>
+  <div class="banner">
+    Promo Spesial! Top Up Aman & Cepat via WhatsApp
+  </div>
 
-        <label for="nominal">Nominal:</label>
-        <select id="nominal" required>
-          <option value="86 Diamond">86 Diamond</option>
-          <option value="172 Diamond">172 Diamond</option>
-          <option value="344 Diamond">344 Diamond</option>
-          <option value="720 UC">720 UC</option>
-        </select>
+  <section class="price-list">
+    <div class="game-card">
+      <h2>Mobile Legends (MLBB)</h2>
+      <ul>
+        <li>Diamond 12 = Rp12.000</li>
+        <li>Diamond 50 = Rp48.000</li>
+        <li>Diamond 100 = Rp95.000</li>
+      </ul>
+      <a href="https://wa.me/628317309346" class="btn-order" target="_blank">Order via WhatsApp</a>
+    </div>
 
-        <label for="pembayaran">Metode Pembayaran:</label>
-        <select id="pembayaran" required>
-          <option value="DANA">DANA</option>
-          <option value="OVO">OVO</option>
-          <option value="GOPAY">GOPAY</option>
-          <option value="QRIS">QRIS</option>
-        </select>
+    <div class="game-card">
+      <h2>Free Fire (FF)</h2>
+      <ul>
+        <li>Diamond 10 = Rp9.000</li>
+        <li>Diamond 50 = Rp40.000</li>
+        <li>Diamond 100 = Rp78.000</li>
+      </ul>
+      <a href="https://wa.me/628317309346" class="btn-order" target="_blank">Order via WhatsApp</a>
+    </div>
 
-        <button type="submit">Order via WhatsApp</button>
-      </div>
-    </form>
-  </main>
-  <footer>
-    &copy; 2025 jayytopup. All rights reserved.
-  </footer>
-  <script>
-    document.getElementById("topupForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const game = document.getElementById("game").value;
-      const id = document.getElementById("id").value;
-      const server = document.getElementById("server").value;
-      const nominal = document.getElementById("nominal").value;
-      const pembayaran = document.getElementById("pembayaran").value;
+    <div class="game-card">
+      <h2>PUBG Mobile</h2>
+      <ul>
+        <li>UC 60 = Rp10.000</li>
+        <li>UC 300 = Rp48.000</li>
+        <li>UC 600 = Rp90.000</li>
+      </ul>
+      <a href="https://wa.me/628317309346" class="btn-order" target="_blank">Order via WhatsApp</a>
+    </div>
+  </section>
+</main>
 
-      const pesan = `Halo kak, saya mau top up:%0AGame: ${game}%0AID: ${id}%0AServer: ${server}%0ANominal: ${nominal}%0APembayaran: ${pembayaran}`;
-      const wa = "083117309346";
-      window.open(`https://wa.me/62${wa.slice(1)}?text=${pesan}`, "_blank");
-    });
-  </script>
+<footer>
+  &copy; 2025 jayytopup • Hubungi: 0831-1730-9346
+</footer>
+
 </body>
 </html>
